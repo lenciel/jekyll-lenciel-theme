@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "jekyll-lenciel-theme"
-  spec.version       = "0.1.2"
+  spec.version       = "0.1.5"
   spec.authors       = ["lenciel"]
   spec.email         = ["lenciel@gmail.com"]
 
@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = "" 
   spec.license       = "MIT"
 
-  spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(%r{^(assets|_layouts|_includes|_sass|LICENSE|README)}i) }
+  spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(%r{^(fonts|javascripts|images|blog|assets|_layouts|_includes|_sass|LICENSE|README|index)}i) }
 
   spec.add_runtime_dependency "jekyll", "~> 3.4"
 
