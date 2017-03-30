@@ -66,8 +66,8 @@ function addCodeLineNumbers() {
 }
 
 function flashVideoFallback(){
-  var flashplayerlocation = "/assets/jwplayer/player.swf",
-      flashplayerskin = "/assets/jwplayer/glow/glow.xml";
+  var flashplayerlocation = "/assets/javascipts/libs/jwplayer/player.swf",
+      flashplayerskin = "/assets/javascipts/libs/jwplayer/glow/glow.xml";
   $('video').each(function(i, video){
     video = $(video);
     if (!Modernizr.video.h264 && swfobject.getFlashPlayerVersion() || window.location.hash.indexOf("flash-test") !== -1){
