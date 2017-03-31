@@ -65,7 +65,7 @@ module Jekyll
       @name = 'atom.xml'
       self.process(@name)
       # Read the YAML data from the layout page.
-      self.read_yaml(File.join(base, '_includes/custom'), 'category_feed.xml')
+      self.read_yaml(File.join(base, 'plugins'), 'category_feed.xml')
       self.data['category']    = category
       # Set the title for this page.
       title_prefix             = site.config['category_title_prefix'] || 'Category: '
@@ -108,7 +108,7 @@ module Jekyll
       if self.layouts.key? 'category_index'
         dir = self.config['category_dir'] || 'categories'
         self.categories.keys.each do |category|
-          self.write_category_index(File.join(dir, category.to_s.to_url), category)
+          self.write_category_index(File.join(dir, category.to_url), category)
         end
 
       # Throw an exception if the layout couldn't be found.
