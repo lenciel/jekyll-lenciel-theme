@@ -1,6 +1,7 @@
 *.gem
 .bundle
-.sass-cache
+.*-cache
 _site
+example/_site
 Gemfile.lock
 .DS_Store
