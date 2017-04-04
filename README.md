@@ -42,8 +42,11 @@ Your theme is setup just like a normal Jekyll site! To test your theme, run `bun
 
 When your theme is released, only the files in `_layouts`, `_includes`, and `_sass` tracked with Git will be released.
 
+Build the gem and push it to rubygems site:
+
 `gem build jekyll-lenciel-theme.gemspec`
 `gem push jekyll-lenciel-theme-*.gem`
+
 ## License
 
 The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
