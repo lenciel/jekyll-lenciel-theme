@@ -14,6 +14,7 @@ body > nav {
       padding: .3em .5em 0;
       font-size: .85em;
       font-family: $sans;
+      font-display: auto;
       line-height: 1.1em;
       width: 95%;
       @include border-radius(.5em);
@@ -55,6 +56,7 @@ body > nav {
     a {
       @include link-colors($nav-color, $nav-color-hover, $visited: $nav-color);
       font-family: $sans;
+      font-display: auto;
       text-shadow: lighten($nav-bg, 12) 0 1px;
       float: left;
       text-decoration: none;

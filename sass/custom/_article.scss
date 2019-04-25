@@ -12,6 +12,7 @@ article {
   }
   h2, h3, h4, h5, h6 {
     font-family: $serif;
+    font-display: auto;
     line-height: 1em;
     text-shadow: 1px 1px #efefef,2px 2px #828887;
   }
@@ -72,6 +73,7 @@ article {
     border: 1px solid hsl(0, 0%, 80%);
     font-size: 11px;
     font-family: Arial,Helvetica,sans-serif;
+    font-display: auto;
     background-color: hsl(0, 0%, 97%);
     color: hsl(0, 0%, 20%);
     -moz-box-shadow: 0 1px 0px rgba(0,0,0,0.2),0 0 0 2px #fff inset;
