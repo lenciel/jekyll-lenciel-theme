@@ -28,6 +28,9 @@ Or install it yourself as:
 
 ### how to change js/css
 
+to update css, update scss, use 'compass compile' then copy screen.css to app.css to replace the correspond part.
+
+to update js, just update it and see take care of app.js yourself.
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/lenciel/jekyll-lenciel-theme. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
