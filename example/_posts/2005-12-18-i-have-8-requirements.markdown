@@ -4,10 +4,12 @@ title: "test"
 date: 2005-12-18 23:26:38 +0800
 comments: true
 categories:
-- rants
+mathjax: true
 ---
 
-test
+When $$a \ne 0$$, there are two solutions to $$ax^2 + bx + c = 0$$ and they are
 
-人类搞过[研究](https://www.forbes.com/sites/georgebradt/2015/05/27/the-secret-of-happiness-revealed-by-harvard-study/)，搞过[指数](https://worldhappiness.report/ed/2018/)，甚至搞过[公式](https://www.nytimes.com/2013/12/15/opinion/sunday/a-formula-for-happiness.html)，还是没搞定。我今年看过Gary Saul Morson的[一篇超级长文](https://athenaeumreview.org/essay/the-problem-with-happiness/)
+$$x_1 = {-b + \sqrt{b^2-4ac} \over 2a}$$
+$$x_2 = {-b - \sqrt{b^2-4ac} \over 2a} \notag$$
 
+$$ \begin{align*} y = y(x,t) &= A e^{i\theta} \\ &= A (\cos \theta + i \sin \theta) \\ &= A (\cos(kx - \omega t) + i \sin(kx - \omega t)) \\ &= A\cos \frac{2\pi}{\lambda} (x - v t) + i A\sin \frac{2\pi}{\lambda} (x - v t) \end{align*} $$

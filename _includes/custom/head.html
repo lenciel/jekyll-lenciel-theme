@@ -17,3 +17,9 @@
 <link rel=“preload” href=“{{ root_url }}/assets/fonts/YDAoLskQQ5MOAgvHUQCcLaa0P60JZGaCMFbL3N9v4H0.woff2” as=“font”>
 <link rel="preload" href="{{ root_url }}/assets/stylesheets/app.css" as="style">
 <link rel="preload" href="{{ root_url }}/assets/javascripts/app.js" as="script">
+{% if page.mathjax %}
+<!-- https://docs.mathjax.org/en/latest/configuration.html#local-config-files -->
+<script type="text/javascript"
+        src="https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+{% endif %}
