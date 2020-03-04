@@ -8,19 +8,19 @@ description: > # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
+baseurl: ""
+url: "localhost"
 default_asides: []
 sidebar: collapse
 
 # Build settings
-markdown: rdiscount
-rdiscount:
-  extensions:
-    - autolink
-    - footnotes
-    - smart
-    - generate_toc
-  toc_token: "{:toc}"
 theme: jekyll-lenciel-theme
+plugins:
+  - jekyll-paginate
+  - jekyll-responsive-image
+  - jekyll-gist
+  - jekyll-sitemap
+  - jekyll-feed
 gems: []
 exclude:
   - Gemfile
@@ -37,10 +37,9 @@ safe: false
 # include_code.rb
 code_dir: downloads/code
 # category_generator
-category_dir: blog/categories
+category_dir: categories
 
-
-highlighter: pygments # default python pygments have been replaced by pygments.rb
+highlighter: rouge
 paginate: 2          # Posts per page on the blog index
 paginate_path: "posts/:num"  # Directory base for pagination URLs eg. /posts/2/
 recent_posts: 5       # Posts in the sidebar Recent Posts section
@@ -49,6 +48,25 @@ excerpt_separator: "<!--more-->"
 
 titlecase: true       # Converts page and post titles to titlecase
 
+# jekyll-responsive-image
+responsive_image:
+  template: ./plugins/responsive-image.html
+  default_quality: 90
+  cache: true
+  sizes:
+    - width: 480  # [Required] How wide the resized image will be.
+      quality: 80 # [Optional] Overrides default_quality for this size.
+    - width: 800
+    - width: 1400
+      quality: 90
+  auto_rotate: false
+  strip: save_to_source
+  base_path: downloads
+  output_path_format: downloads/%{dirname}/resized/%{width}/%{basename}
+  save_to_source: false
+  cache: false
+  # extra_images:
+  #   - downloads/*/*/*/*.{jpeg,jpg,png}
 
 # Google Analytics
 google_analytics_tracking_id: UA-175991-6
@@ -57,5 +75,4 @@ google_analytics_tracking_id: UA-175991-6
 facebook_like: false
 
 # Beian
-
 beian: 沪ICP备xxxxxxxxx号

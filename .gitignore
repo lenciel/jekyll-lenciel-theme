@@ -5,3 +5,4 @@ _site
 example/_site
 Gemfile.lock
 .DS_Store
+/.jekyll-metadata

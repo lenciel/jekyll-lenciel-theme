@@ -19,8 +19,8 @@
 # - category_title_prefix: The string used before the category name in the page title (default is
 #                          'Category: ').
 
-require 'stringex'
-
+require "stringex"
+I18n.config.available_locales = :en
 module Jekyll
 
   # The CategoryIndex class creates a single category page for the specified category.
@@ -105,30 +105,12 @@ module Jekyll
 
     # Loops through the list of category pages and processes each one.
     def write_category_indexes
-      if self.layouts.key? 'category_index'
-        dir = self.config['category_dir'] || 'categories'
-        self.categories.keys.each do |category|
-          self.write_category_index(File.join(dir, category.to_url), category)
-        end
-
-      # Throw an exception if the layout couldn't be found.
-      else
-        raise <<-ERR
-
-
-===============================================
- Error for category_generator.rb plugin
------------------------------------------------
- No 'category_index.html' in source/plugins/
- Perhaps you haven't installed a theme yet.
-===============================================
-
-ERR
+      dir = self.config['category_dir'] || 'categories'
+      self.categories.keys.each do |category|
+        self.write_category_index(File.join(dir, category.to_url), category)
       end
     end
-
   end
-
 
   # Jekyll hook - the generate method is called by jekyll, and generates all of the category pages.
   class GenerateCategories < Generator
@@ -143,7 +125,7 @@ ERR
 
 
   # Adds some extra filters used during the category creation process.
-  module Filters
+  module CategoryFilter
 
     # Outputs a list of categories as comma-separated <a> links. This is used
     # to output the category list for each post on a category page.
@@ -191,3 +173,5 @@ ERR
   end
 
 end
+
+Liquid::Template.register_filter(Jekyll::CategoryFilter)
