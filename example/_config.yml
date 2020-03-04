@@ -49,9 +49,10 @@ titlecase: true       # Converts page and post titles to titlecase
 
 # jekyll-picture-tag
 picture:
-  output: "resized"
+  output: "../resized"
   cdn_url: "https://cdn.lenciel.com"
-  cdn_environments: ['production', 'development']
+  cdn_environments: ['production']
+  suppress_warnings: true
 
 # Google Analytics
 google_analytics_tracking_id: UA-175991-6
