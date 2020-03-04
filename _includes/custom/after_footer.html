@@ -1,9 +1,21 @@
+<link rel=“preload” href=“https://cdn.lenciel.com/assets/fonts/CWlc_g68BGYDSGdpJvpktgLUuEpTyoUstqEm5AMlJo4.woff2” as=“font” async>
+<link rel=“preload” href=“https://cdn.lenciel.com/assets/fonts/0XxGQsSc1g4rdRdjJKZrNAzyDMXhdD8sAj6OAJTFsBI.woff2” as=“font” async>
+<link rel=“preload” href=“https://cdn.lenciel.com/assets/fonts/yAXhog6uK3bd3OwBILv_SJBw1xU1rKptJj_0jans920.woff2” as=“font” async>
+<link rel=“preload” href=“https://cdn.lenciel.com/assets/fonts/YDAoLskQQ5MOAgvHUQCcLWjF_m7mVnhXExjNED3rUtY.woff2” as=“font” async>
+<link rel=“preload” href=“https://cdn.lenciel.com/assets/fonts/YDAoLskQQ5MOAgvHUQCcLaa0P60JZGaCMFbL3N9v4H0.woff2” as=“font” async>
+
 <script type="text/javascript">
   var stylesheet = document.createElement('link');
-  stylesheet.href = '{{ root_url }}/assets/stylesheets/app.css';
+  stylesheet.href = 'https://cdn.lenciel.com/assets/stylesheets/app.css';
   stylesheet.rel = 'stylesheet';
   stylesheet.type = 'text/css';
   document.getElementsByTagName('head')[0].appendChild(stylesheet);
 </script>
-
-<script src="{{ root_url }}/assets/javascripts/app.js" async></script>
+<script>
+  (function() {
+    window.lazyLoadOptions = {
+      threshold: 0
+  };
+})();
+</script>
+<script src="../assets/javascripts/app.js" async></script>

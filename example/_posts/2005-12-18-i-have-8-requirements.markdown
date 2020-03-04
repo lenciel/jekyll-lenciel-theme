@@ -41,8 +41,7 @@ A link to [Jekyll Now](http://github.com/barryclark/jekyll-now/). A big ass lite
 
 ## responsive images
 
-{% responsive_image path: downloads/images/2019_01/brochure_72_lg.jpg %}
-
+{% picture downloads/images/2018_12/light_on_sand.jpg %}
 
 ![an image alt text](/downloads/images/2019_01/brochure_72_lg.jpg "an image title")
 

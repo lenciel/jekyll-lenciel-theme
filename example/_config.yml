@@ -17,7 +17,6 @@ sidebar: collapse
 theme: jekyll-lenciel-theme
 plugins:
   - jekyll-paginate
-  - jekyll-responsive-image
   - jekyll-gist
   - jekyll-sitemap
   - jekyll-feed
@@ -48,25 +47,11 @@ excerpt_separator: "<!--more-->"
 
 titlecase: true       # Converts page and post titles to titlecase
 
-# jekyll-responsive-image
-responsive_image:
-  template: ./plugins/responsive-image.html
-  default_quality: 90
-  cache: true
-  sizes:
-    - width: 480  # [Required] How wide the resized image will be.
-      quality: 80 # [Optional] Overrides default_quality for this size.
-    - width: 800
-    - width: 1400
-      quality: 90
-  auto_rotate: false
-  strip: save_to_source
-  base_path: downloads
-  output_path_format: downloads/%{dirname}/resized/%{width}/%{basename}
-  save_to_source: false
-  cache: false
-  # extra_images:
-  #   - downloads/*/*/*/*.{jpeg,jpg,png}
+# jekyll-picture-tag
+picture:
+  output: "resized"
+  cdn_url: "https://cdn.lenciel.com"
+  cdn_environments: ['production', 'development']
 
 # Google Analytics
 google_analytics_tracking_id: UA-175991-6

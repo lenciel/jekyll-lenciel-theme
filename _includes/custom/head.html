@@ -9,13 +9,7 @@
 {% capture category %}{% if page.categories %}{{ page.categories }}{% endif %}{% endcapture %}
 {% if page.categories %}<meta property="article:section" content="{{ page.categories }}" />{% endif %}
 {% if page.keywords %}<meta name="keywords" content="{{ page.keywords }}" />{% for keyword in page.keywords %}<meta property="article:tag" content="{{ keyword | replace: ',', '' }}" />{% endfor %}{% endif %}
-<link rel=“preload” href=“{{ root_url }}/assets/fonts/CWlc_g68BGYDSGdpJvpktgLUuEpTyoUstqEm5AMlJo4.woff2” as=“font”>
-<link rel=“preload” href=“{{ root_url }}/assets/fonts/0XxGQsSc1g4rdRdjJKZrNAzyDMXhdD8sAj6OAJTFsBI.woff2” as=“font”>
-<link rel=“preload” href=“{{ root_url }}/assets/fonts/yAXhog6uK3bd3OwBILv_SJBw1xU1rKptJj_0jans920.woff2” as=“font”>
-<link rel=“preload” href=“{{ root_url }}/assets/fonts/YDAoLskQQ5MOAgvHUQCcLWjF_m7mVnhXExjNED3rUtY.woff2” as=“font”>
-<link rel=“preload” href=“{{ root_url }}/assets/fonts/YDAoLskQQ5MOAgvHUQCcLaa0P60JZGaCMFbL3N9v4H0.woff2” as=“font”>
-<link rel="preload" href="{{ root_url }}/assets/stylesheets/app.css" as="style">
-<link rel="preload" href="{{ root_url }}/assets/javascripts/app.js" as="script">
+
 {% if page.mathjax %}
 <script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 {% endif %}
