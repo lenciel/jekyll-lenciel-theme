@@ -9,17 +9,13 @@ description: > # this means to ignore newlines until "baseurl:"
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
 baseurl: ""
-url: "localhost"
+url: "https://localhost.prod"
 default_asides: []
 sidebar: collapse
+static_base: "https://cdn.lenciel.com"
 
 # Build settings
 theme: jekyll-lenciel-theme
-plugins:
-  - jekyll-paginate
-  - jekyll-gist
-  - jekyll-sitemap
-  - jekyll-feed
 gems: []
 exclude:
   - Gemfile
@@ -49,7 +45,7 @@ titlecase: true       # Converts page and post titles to titlecase
 
 # jekyll-picture-tag
 picture:
-  output: "../resized"
+  output: "resized"
   cdn_url: "https://cdn.lenciel.com"
   cdn_environments: ['production']
   suppress_warnings: true
