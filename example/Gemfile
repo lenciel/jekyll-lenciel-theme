@@ -1,8 +1,7 @@
 source "https://rubygems.org"
 
-gem "jekyll", "4.0.0"
+gem "jekyll", ">= 3.6", "< 5.0"
 gem "jekyll-lenciel-theme", path: "../"
-gem 'pygments.rb'
 
 
 group :jekyll_plugins do
@@ -10,7 +9,12 @@ group :jekyll_plugins do
    gem 'jekyll-gist'
    gem 'jekyll_picture_tag'
    gem 'jekyll-sitemap'
+   gem 'jekyll-feed'
    gem 'pygments.rb'
    gem 'stringex'
-   gem 'jekyll-feed'
+   # gems below are installed for rake task
+   gem 'colorize'
+   gem 'html_compressor'
+   gem 'parallel'
+   gem 'ruby-progressbar'
 end

@@ -2,7 +2,7 @@
 layout: post
 title: "2018年终总结"
 date: 2018-12-31 16:01:58 +0800
-categories: 
+categories:
 - thinking
 - writing
 - rants
@@ -40,7 +40,7 @@ categories:
 
 嗓门浑厚，胃口感人，脾气急躁。
 
-但毕竟本命年，也不是都顺，偶尔会想起Raymond Carver。他一生坎坷，没考上大学，早婚早育，为了生计不停搬家，到处打短工。后来他出了名，离婚又结婚。大学请他去讲课，准备创作长篇小说时，却诊断出癌症，没多久，转移到大脑，50岁去世。 
+但毕竟本命年，也不是都顺，偶尔会想起Raymond Carver。他一生坎坷，没考上大学，早婚早育，为了生计不停搬家，到处打短工。后来他出了名，离婚又结婚。大学请他去讲课，准备创作长篇小说时，却诊断出癌症，没多久，转移到大脑，50岁去世。
 
 当年看[《鸟人》](https://lenciel.com/2015/02/birdman/)，我把《当我们谈论爱情时我们在谈论什么》翻出来看，发现书的题词是引用《生命不能承受之轻》中的一段话。
 
@@ -64,4 +64,4 @@ categories:
 
 但今天本座特地加了配乐，让我们一起胡闹一下吧。
 
-<audio controls loop preload><source src="/downloads/audio/demons_acoustic.mp3"></audio>
+<audio controls loop preload><source src="{{ site.static_base }}/downloads/audio/demons_acoustic.mp3"></audio>
