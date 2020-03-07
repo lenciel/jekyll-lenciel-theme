@@ -1,6 +1,6 @@
 // Navigation
 body > nav {
-  @include single-box-shadow(#000, 0px, 2px, 5px);
+  @include single-box-shadow(0px, 2px, 5px, 0px, #000);
   li + li {
     border-left: none;
     a {

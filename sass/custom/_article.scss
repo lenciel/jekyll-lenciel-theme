@@ -1,6 +1,6 @@
 // Article
 body > div#main {
-  @include single-box-shadow(#000, 1px, 3px, 5px);
+  @include single-box-shadow(1px, 3px, 5px, 0px, #000);
 }
 
 article {
@@ -13,11 +13,12 @@ article {
   h2, h3, h4, h5, h6 {
     font-family: $serif;
     font-display: auto;
-    line-height: 1em;
+    margin-bottom: 0.6em;
+    line-height: 1.35;
     text-shadow: 1px 1px #efefef,2px 2px #828887;
   }
   h2 {
-    margin-bottom: .8em;
+    margin-bottom: .5em;
   }
   i {
     &.icon-twitter {

@@ -10,24 +10,18 @@
 @import "navigation";
 @import "article";
 @import "footer";
+@import "resfont";
 
 // Main layout
 html {
+  @include fluid-type($min_width, $max_width, $min_font, $max_font);
+
   body > div > div {
     border-right: none;
   }
 
   audio {
     width:100%;
-  }
-
-  i.icon { // 使用 Pictos 的 icon font
-    font-family: 'Pictos Custom';
-    font-display: auto;
-    -webkit-font-smoothing: antialiased;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 22px;
   }
 
   ::selection {
@@ -79,4 +73,8 @@ html {
     height: 40px;
     margin: -.53em 0 0 0;
   }
+}
+
+* + table {
+  @include fluid-type($min_width, $max_width, $min_font - 2, $max_font - 2);
 }

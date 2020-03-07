@@ -6,8 +6,7 @@ permalink: /archives/
 ---
 
 <div id="blog-archives">
-{% assign reverse_posts = site.posts | reverse %}
-{% for post in reverse_posts %}
+{% for post in site.posts %}
 {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
 {% unless year == this_year %}
   {% assign year = this_year %}

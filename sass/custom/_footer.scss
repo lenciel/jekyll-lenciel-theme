@@ -11,7 +11,7 @@ body > footer {
     float: right;
     color: #9C9EA2;
   }
-  @include single-box-shadow(#000, 1px, 3px, 5px)
+  @include single-box-shadow(1px, 3px, 5px, 0px, #000)
 }
 
 section {

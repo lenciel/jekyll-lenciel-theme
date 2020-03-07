@@ -1,10 +1,10 @@
 $blockquote: $type-border !default;
-$sans: "PT Sans", "Helvetica Neue", Arial, sans-serif !default;
-$serif: "PT Serif", Georgia, Times, "Times New Roman", serif !default;
-$mono: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace !default;
-$heading-font-family: "PT Serif", "Georgia", "Helvetica Neue", Arial, sans-serif !default;
-$header-title-font-family: $heading-font-family !default;
-$header-subtitle-font-family: $heading-font-family !default;
+$serif: -apple-system, "Noto Sans", "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Source Han Sans SC", "Source Han Sans CN", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
+$sans: -apple-system, "Noto Sans", "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Source Han Sans SC", "Source Han Sans CN", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
+$mono: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace;
+$heading-font-family: PingFang SC, Verdana, Helvetica Neue, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
+$header-title-font-family: $heading-font-family;
+$header-subtitle-font-family: $heading-font-family;
 
 // Fonts
 .heading {
@@ -15,7 +15,6 @@ $header-subtitle-font-family: $heading-font-family !default;
 .mono { font-family: $mono; }
 
 body > header h1 {
-  font-size: 2.2em;
   @extend .heading;
   font-family: $header-title-font-family;
   font-weight: normal;
@@ -32,37 +31,18 @@ body {
   @extend .serif;
 }
 h1 {
-  font-size: 2.2em;
   line-height: 1.2em;
-}
-
-@media only screen and (min-width: 992px) {
-  body { font-size: 1.15em; }
-  h1 { font-size: 2.6em; line-height: 1.2em; }
 }
 
 #{headings()}{
   @extend .heading;
   text-rendering: optimizelegibility;
   text-shadow: 1px 1px #efefef,2px 2px #828887;
-  margin-bottom: 1em;
+  margin-bottom: 0.6em;
+  line-height: 1.35;
   font-weight: bold;
 }
-h2, section h1 {
-  font-size: 1.5em;
-}
-h3, section h2, section section h1 {
-  font-size: 1.3em;
-}
-h4, section h3, section section h2, section section section h1 {
-  font-size: 1em;
-}
-h5, section h4, section section h3 {
-  font-size: .9em;
-}
-h6, section h5, section section h4, section section section h3 {
-  font-size: .8em;
-}
+
 p, blockquote, ul, ol { margin-bottom: 1.5em; }
 
 ul { list-style-type: disc;
