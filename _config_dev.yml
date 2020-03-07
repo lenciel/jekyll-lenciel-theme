@@ -1,6 +1,3 @@
-# ----------------------- #
-#      Main Configs       #
-# ----------------------- #
 static_base: ""
 url: http://localhost:4000
 google_analytics_tracking_id: xyz

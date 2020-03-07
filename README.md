@@ -28,7 +28,7 @@ Or install it yourself as:
 
 ### how to change js/css
 
-to update css, update scss, use 'compass compile' then copy screen.css to app.css to replace the correspond part.
+to update css, update scss, use 'compass compile'.
 
 to update js, just update it and see take care of app.js yourself.
 ## Contributing

@@ -90,9 +90,9 @@ end
 desc "preview the dev site in a web browser"
 task :preview do
   Rake::Task[:backup_site].execute
-  puts "Starting to serve jekyll on #{localhost_ip}:#{server_port}"
+  puts "Starting to serve jekyll on http://#{localhost_ip}:#{server_port}"
 
-  jekyllPid = Process.spawn("jekyll serve --incremental --host #{localhost_ip} --port #{server_port}  --watch --config _config.yml,_config_dev.yml")
+  jekyllPid = Process.spawn({"JEKYLL_ENV"=>"development"}, "jekyll serve --incremental --host #{localhost_ip} --port #{server_port}  --watch --config _config.yml,_config_dev.yml")
 
   trap("INT") {
     [jekyllPid].each { |pid| Process.kill(9, pid) rescue Errno::ESRCH }
@@ -106,7 +106,7 @@ end
 desc "preview the prod site in a web browser"
 task :preview_prod do
   Rake::Task[:backup_site].execute
-  puts "Starting to serve jekyll on #{localhost_ip}:#{server_port}"
+  puts "Starting to serve jekyll on http://#{localhost_ip}:#{server_port}"
 
   jekyllPid = Process.spawn({"JEKYLL_ENV"=>"production"}, "jekyll serve --watch")
   puts "Starting to serve jekyll on #{jekyllPid}"
@@ -212,7 +212,7 @@ task :prepare_deploy do
   Rake::Task[:integrate].execute
   Rake::Task[:generate].execute
   Rake::Task[:minify_html].execute
-  rm_rf [Dir.glob("#{deploy_dir}/node_modules"), Dir.glob("#{deploy_dir}/*.md"), Dir.glob("#{deploy_dir}/*.py"), Dir.glob("#{deploy_dir}/*.json"), Dir.glob("#{deploy_dir}/*.sh"), "#{deploy_dir}/plugins", "#{deploy_dir}/Rakefile", "#{deploy_dir}/Makefile", "#{deploy_dir}/gulpfile.js"]
+  rm_rf [Dir.glob("#{deploy_dir}/node_modules"), Dir.glob("#{deploy_dir}/*.md"), Dir.glob("#{deploy_dir}/*.py"), Dir.glob("#{deploy_dir}/*.json"), Dir.glob("#{deploy_dir}/*.sh"), "#{deploy_dir}/plugins", "#{deploy_dir}/Rakefile", "#{deploy_dir}/Makefile", "#{deploy_dir}/gulpfile.js", "#{deploy_dir}/*.report.html"]
 
   puts "\n## Copying #{deploy_dir} to #{ftp_dir}"
   rm_rf "{ftp_dir}"
