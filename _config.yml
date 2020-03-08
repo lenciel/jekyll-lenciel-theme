@@ -10,6 +10,7 @@ exclude:
 - README.md
 - LICENSE
 - CNAME
+- sass
 - Gemfile
 - Gemfile.lock
 - jekyll-lenciel-theme.gemspec
