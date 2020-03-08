@@ -7,10 +7,14 @@
     {% endif %}
     {% unless page.meta == false %}
       <p class="meta">
-        <!--{% include post/date.html %}{{ time }}-->
         <time class='entry-date' datetime='{{ post.date | date_xmlschema }}'>
+          {% if index %}
           <span class='date'>{{ post.date | date: "%Y-%m-%d" }}</span>
           <span class='time'>{{ post.date | date: '%H:%M:%S' }}</span>
+          {% else %}
+          <span class='date'>{{ page.date | date: "%Y-%m-%d" }}</span>
+          <span class='time'>{{ page.date | date: '%H:%M:%S' }}</span>
+          {% endif %}
         </time>
         {% if site.disqus_short_name and page.comments != false and post.comments != false and site.disqus_show_comment_count == true %}
            | <a href="{% if index %}{{ root_url }}{{ post.url }}{% endif %}#disqus_thread"
