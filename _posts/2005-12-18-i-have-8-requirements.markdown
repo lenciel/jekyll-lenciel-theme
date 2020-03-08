@@ -50,6 +50,10 @@ A link to [Jekyll Now](http://github.com/barryclark/jekyll-now/). A big ass lite
 
 ![keep it simple](/downloads/images/2019_01/HP_65.jpg "Don't touch me...")
 
+{% blockquote Bobby Willis http://google.com/search?q=pants the search for bobby's pants %}
+Wheeee!
+{% endblockquote %}
+
 * A bulletted list
 - alternative syntax 1
 + alternative syntax 2
