@@ -11,6 +11,7 @@ exclude:
 - LICENSE
 - CNAME
 - sass
+- assets/javascripts/libs/*.js
 - Gemfile
 - Gemfile.lock
 - jekyll-lenciel-theme.gemspec
