@@ -30,4 +30,10 @@ layout: default
     <div id="disqus_thread" aria-live="polite">{% include post/disqus_thread.html %}</div>
   </section>
 {% endif %}
+{% if site.comment_appId and page.comments == true %}
+  <section>
+    <h1>欢迎留言</h1>
+    <div id="vcomments" aria-live="polite"></div>
+  </section>
+{% endif %}
 </div>

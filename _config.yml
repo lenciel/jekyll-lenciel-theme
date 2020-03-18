@@ -51,6 +51,11 @@ facebook_like: false
 # Beian
 beian: 沪ICP备xxxxxxxxx号
 
+# Gitalk
+comment_appId: gzGzoHsz
+comment_appKey: PjJJiU2
+
+
 # 4. Jekyll settings
 sass:
   style: compressed # Style compression
