@@ -50,6 +50,15 @@ A link to [Jekyll Now](http://github.com/barryclark/jekyll-now/). A big ass lite
 
 ![keep it simple](/downloads/images/2019_01/HP_65.jpg "Don't touch me...")
 
+## responsive left right
+{% picture downloads/images/2006_02/brokeback_mountain_4.jpg --alt < --img width="98" class="left" %}
+{% picture downloads/images/2006_02/brokeback_mountain_5.jpg --alt > --img width="98" class="right" %}
+{% picture downloads/images/2006_02/brokeback_mountain_5.jpg --alt >< --img width="98" class="center" %}
+
+![image alt >](/downloads/images/2006_02/brokeback_mountain_4.jpg "an image title")
+![image alt <](/downloads/images/2006_02/brokeback_mountain_5.jpg "an image title")
+![image alt ><](/downloads/images/2006_02/brokeback_mountain_6.jpg)
+
 {% blockquote Bobby Willis http://google.com/search?q=pants the search for bobby's pants %}
 Wheeee!
 {% endblockquote %}
