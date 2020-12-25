@@ -6,7 +6,7 @@ categories: [blog, travel]
 comments: true
 ---
 
-![light on sand](/downloads/images/2018_12/light_on_sand.jpg "Don't touch me...")
+![light on sand](/downloads/images/2018_12/light_on_sand.jpg --alt Don't touch me...)
 
 今年的跨年主题是写胶片，仿佛事关生死，但也许生死已有定论。
 

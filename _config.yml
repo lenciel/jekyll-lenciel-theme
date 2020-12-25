@@ -45,7 +45,7 @@ picture:
   noscript: true # add a fallback image inside a <noscript> tag.
 
 # google analytics
-google_analytics_tracking_id: UA-175991-6
+
 # facebook kike
 facebook_like: false
 # Beian
@@ -82,3 +82,4 @@ description: > # this means to ignore newlines until "baseurl:"
 baseurl: ""
 url: "https://localhost.prod"
 static_base: "https://cdn.lenciel.com"
+simple_search: true
