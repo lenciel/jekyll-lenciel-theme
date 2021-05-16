@@ -48,6 +48,8 @@ Build the gem and push it to rubygems site:
 `gem build jekyll-lenciel-theme.gemspec`
 `gem push jekyll-lenciel-theme-*.gem`
 
+test
+
 ## License
 
 The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
