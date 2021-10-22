@@ -1,23 +1,44 @@
-{% if page.title %}<meta property="og:title" content="{{ page.title }}" /><meta itemprop="name" content="{{ page.title }}" />{% endif %}
+{% if page.title %}<meta property="og:title" content="{{ page.title }}" /><meta
+  itemprop="name"
+  content="{{ page.title }}"
+/>{% endif %}
 <meta property="og:type" content="article" />
 <meta property="og:url" content="{{ canonical }}" />
-<meta property="og:description" content="{{ description | strip_html | condense_spaces | truncate:150 }}" />
-{% if page.ogimage %}<meta property="og:image" content="{{ page.ogimage }}" /><meta itemprop="image" content="{{ page.ogimage }}" />{% endif %}
+<meta
+  property="og:description"
+  content="{{ description | strip_html | condense_spaces | truncate:150 }}"
+/>
+{% if page.ogimage %}<meta
+  property="og:image"
+  content="{{ page.ogimage }}"
+/><meta itemprop="image" content="{{ page.ogimage }}" />{% endif %}
 <meta property="og:site_name" content="{{ site.url }}" />
-<meta property="article:author" content="http://lenciel.com">
-{% if page.date %}<meta property="article:published_time" content="{{ page.date }}" />{% endif %}
-{% capture category %}{% if page.categories %}{{ page.categories }}{% endif %}{% endcapture %}
-{% if page.categories %}<meta property="article:section" content="{{ page.categories }}" />{% endif %}
-{% if page.keywords %}<meta name="keywords" content="{{ page.keywords }}" />{% for keyword in page.keywords %}<meta property="article:tag" content="{{ keyword | replace: ',', '' }}" />{% endfor %}{% endif %}
-
-{% if page.mathjax %}
-<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<meta property="article:author" content="http://lenciel.com" />
+{% if page.date %}<meta
+  property="article:published_time"
+  content="{{ page.date }}"
+/>{% endif %} {% capture category %}{% if page.categories %}{{ page.categories
+}}{% endif %}{% endcapture %} {% if page.categories %}<meta
+  property="article:section"
+  content="{{ page.categories }}"
+/>{% endif %} {% if page.keywords %}<meta
+  name="keywords"
+  content="{{ page.keywords }}"
+/>{% for keyword in page.keywords %}<meta
+  property="article:tag"
+  content="{{ keyword | replace: ',', '' }}"
+/>{% endfor %}{% endif %} {% if page.mathjax %}
+<script
+  type="text/javascript"
+  src="https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+></script>
 {% endif %}
 
-<script src='{{ site.static_base }}/assets/javascripts/Valine.min.js'></script>
+<script src="{{ site.static_base }}/assets/javascripts/Valine.min.js"></script>
+<script src="{{ site.static_base }}/assets/javascripts/umami.js"></script>
 <!-- Prefetch DNS for external assets -->
-<link href="https://cdn.lenciel.com" rel="preconnect" crossorigin>
-<link rel="dns-prefetch" href="//stats.g.doubleclick.net">
-<link rel="dns-prefetch" href="//www.google-analytics.com">
-<link rel="dns-prefetch" href="//cdn.lenciel.com">
-<link rel="dns-prefetch" href="//cdn.bootcss.com">
+<link href="https://cdn.lenciel.com" rel="preconnect" crossorigin />
+<link rel="dns-prefetch" href="//stats.g.doubleclick.net" />
+<link rel="dns-prefetch" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="//cdn.lenciel.com" />
+<link rel="dns-prefetch" href="//cdn.bootcss.com" />
