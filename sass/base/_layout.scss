@@ -45,6 +45,7 @@ $header-padding-bottom: 1.5em !default;
 
 body {
   -webkit-text-size-adjust: none;
+  counter-reset: sidenote-counter;
   max-width: $max-width;
   position: relative;
   margin: 0 auto;
@@ -135,7 +136,12 @@ body.sidebar-footer {
   body > header { font-size: $header-font-size * 1.2; }
   #main {
     padding: 0;
+    // for sidenote testing
+    // padding: 0px 500px 0px 0px;
     margin: 0 auto;
+    article {
+      overflow: visible;
+    }
   }
   #content {
     overflow: visible;

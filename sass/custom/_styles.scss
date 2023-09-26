@@ -4,6 +4,7 @@
 // Import
 @import "icomoon";
 @import "footnotes";
+@import "sidenotes";
 @import "tablestyle";
 @import "background";
 @import "header";
@@ -72,6 +73,25 @@ html {
   .divider {
     height: 40px;
     margin: -.53em 0 0 0;
+  }
+  label.margin-toggle:not(.sidenote-number) {
+    display: inline;
+  }
+
+  .sidenote,
+  .marginnote {
+      display: none;
+  }
+
+  .margin-toggle:checked + .sidenote,
+  .margin-toggle:checked + .marginnote {
+      display: block;
+      float: left;
+      font-size: 0.9em;
+      clear: both;
+      width: 90%;
+      margin: 1rem 5%;
+      position: relative;
   }
 }
 
