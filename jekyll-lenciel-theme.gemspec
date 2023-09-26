@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "jekyll-lenciel-theme"
-  spec.version       = "1.0.16"
+  spec.version       = "1.0.23"
   spec.authors       = ["lenciel"]
   spec.email         = ["lenciel@gmail.com"]
 
@@ -12,12 +12,13 @@ Gem::Specification.new do |spec|
 
   spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(%r{^(assets|_layouts|_includes|_sass|LICENSE|README|index)}i) }
 
-  spec.add_runtime_dependency "jekyll", ">= 3.6", "< 5.0"
+  spec.add_runtime_dependency "jekyll", "~> 4.2.0"
   spec.add_runtime_dependency "jekyll-sitemap"
   spec.add_runtime_dependency "jekyll-paginate"
+  spec.add_runtime_dependency "jekyll-archives"
   spec.add_runtime_dependency "jekyll-seo-tag"
   spec.add_runtime_dependency "jekyll-feed"
-  spec.add_runtime_dependency "jekyll_picture_tag"
+  spec.add_runtime_dependency "jekyll_picture_tag", "~> 1.13.0"
 
 
   spec.add_development_dependency "bundler"
