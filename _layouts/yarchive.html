@@ -1,0 +1,22 @@
+---
+layout: default
+---
+<div>
+    <article role="article">
+        <header>
+            <h1 class="entry-title">Archives</h1>
+        </header>
+        <div id="blog-archives">
+            {% for post in page.posts %}
+            {% capture this_year %}{{ page.date | date: "%Y" }}{% endcapture %}
+            {% unless year == this_year %}
+            {% assign year = this_year %}
+            <h2>{{ page.date | date: "%Y" }}</h2>
+            {% endunless %}
+            <article>
+                {% include archive_post.html %}
+            </article>
+            {% endfor %}
+        </div>
+    </article>
+</div>

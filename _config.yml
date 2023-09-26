@@ -7,42 +7,50 @@
 
 # 1. Files excluded from Jekyll builds
 exclude:
-- README.md
-- LICENSE
-- CNAME
-- sass
-- assets/javascripts/libs/*.js
-- Gemfile
-- Gemfile.lock
-- jekyll-lenciel-theme.gemspec
-- .jekyll-cache
+  - README.md
+  - LICENSE
+  - CNAME
+  - sass
+  - assets/javascripts/libs/*.js
+  - Gemfile
+  - Gemfile.lock
+  - jekyll-lenciel-theme.gemspec
+  - .jekyll-cache
 
 # 2. Installed Gems (you still have to gem install them or you can change the Gemfile)
 plugins:
-- jekyll-sitemap
-- jekyll-paginate
-- jekyll-seo-tag
-- jekyll-feed
-- jekyll_picture_tag
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-archives
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll_picture_tag
 
 # 3. Gem settings
 
 # jekyll-paginate
-paginate: 2          # Posts per page on the blog index
-paginate_path: "posts/:num"  # Directory base for pagination URLs eg. /posts/2/
+paginate: 2 # Posts per page on the blog index
+paginate_path: "posts/:num" # Directory base for pagination URLs eg. /posts/2/
 # include_code.rb
 code_dir: downloads/code
 # category_generator
 category_dir: categories
-titlecase: true       # Converts page and post titles to titlecase
+titlecase: true # Converts page and post titles to titlecase
 
 # jekyll-picture-tag
 picture:
   output: "resized"
   cdn_url: "http://cdn.lenciel.com"
-  cdn_environments: ['production']
+  cdn_environments: ["production"]
   suppress_warnings: true
   noscript: true # add a fallback image inside a <noscript> tag.
+
+# jekyll-archives
+
+jekyll-archives:
+  enabled:
+    - year
+  layout: yarchive
 
 # google analytics
 
@@ -55,14 +63,13 @@ beian: 沪ICP备xxxxxxxxx号
 comment_appId: gzGzoHsz
 comment_appKey: PjJJiU2
 
-
 # 4. Jekyll settings
 sass:
   style: compressed # Style compression
 permalink: /:year/:month/:title/
 highlighter: rouge
-recent_posts: 5       # Posts in the sidebar Recent Posts section
-excerpt_link: "Read on &rarr;"  # "Continue reading" link text at the bottom of excerpted articles
+recent_posts: 5 # Posts in the sidebar Recent Posts section
+excerpt_link: "Read on &rarr;" # "Continue reading" link text at the bottom of excerpted articles
 excerpt_separator: "<!--more-->"
 default_asides: []
 sidebar: collapse
@@ -83,3 +90,5 @@ baseurl: ""
 url: "https://localhost.prod"
 static_base: "https://cdn.lenciel.com"
 simple_search: true
+feed:
+  excerpt_only: true
