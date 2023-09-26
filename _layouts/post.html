@@ -34,7 +34,7 @@ single: true
   </section>
   {% endif %}
 </div>
-{% unless page.sidebar == false %}
+{% if post.sidebar %}
 <aside class="sidebar">
   {% if site.page_asides.size %}
   {% include_array page_asides %}
@@ -42,4 +42,4 @@ single: true
   {% include_array default_asides %}
   {% endif %}
 </aside>
-{% endunless %}
+{% endif %}
