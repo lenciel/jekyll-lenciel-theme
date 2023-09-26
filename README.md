@@ -31,6 +31,9 @@ Or install it yourself as:
 to update css, update scss, use 'compass compile'.
 
 to update js, just update it and see take care of app.js yourself.
+
+**make sure you've turn off Chrome cache to get the updated local version files!!!!**
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/lenciel/jekyll-lenciel-theme. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
