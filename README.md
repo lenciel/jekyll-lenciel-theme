@@ -30,7 +30,7 @@ Or install it yourself as:
 
 to update css, update scss, use 'compass compile'.
 
-to update js, just update it and see take care of app.js yourself.
+to update js, just update it and take care of app.js yourself.
 
 **make sure you've turn off Chrome cache to get the updated local version files!!!!**
 
