@@ -1,5 +1,6 @@
 static_base: ""
-url: http://localhost:4000
+url: http://0.0.0.0:4000
 google_analytics_tracking_id: xyz
 # Beian
 beian: abc
+localhost_ip: 0.0.0.0
