@@ -38,14 +38,14 @@
 
 .sidenote-number:after {
     content: counter(sidenote-counter);
-    font-size: 1rem;
+    font-size: 0.8rem;
     top: -0.5rem;
     left: 0.1rem;
 }
 
 .sidenote:before {
     content: counter(sidenote-counter) ".\000a0";
-    font-size: 1rem;
+    font-size: 0.8rem;
     left: -0.4rem;
     // top: -0.5rem;
 }
