@@ -93,6 +93,20 @@ html {
       margin: 1rem 5%;
       position: relative;
   }
+
+  label.margin-toggle.sidenote-number::after {
+    content: "\1f4a1";
+    font-size: 1rem;
+    top: -0.5rem;
+    left: 0.1rem;
+  }
+
+  .margin-toggle:checked + .sidenote:before {
+    content: "\1F4DC";
+    font-size: 1rem;
+    top: -0.1rem;
+    left: -0.4rem;
+  }
 }
 
 * + table {
