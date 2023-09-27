@@ -22,15 +22,16 @@ permalink: /archives/
     <article>
       {% include archive_post.html %}
     </article>
-    <span>更老的按年归档...</span>
   {% else %}
     {% unless year == this_year %}
       {% assign year = this_year %}
-      <li><a href="/{{ year }}/">{{ year }}</a></li>
+      <h2>&#x1F4E6;</h2>
+      <article>
+      <h1><a href="/{{ year }}/">{{ year }}合订本</a></h1>
+      <footer> <span class="categories">点上面进入老年份归档</span> </footer>
+      </article>
     {% endunless %}
   {% endif %}
 {% endfor %}
-
 </ul>
-
 </div>
