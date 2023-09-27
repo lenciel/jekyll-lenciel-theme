@@ -1,4 +1,7 @@
 # coding: utf-8
+# NOTE:
+# 1. the _include/_layout folder is not included in the gem so you should copy it by hand or install it by clone the repo
+# 2. I didn't really run 'rake uncss'  to purge css before release since some css is wrongly purged
 
 Gem::Specification.new do |spec|
   spec.name          = "jekyll-lenciel-theme"
@@ -10,7 +13,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/lenciel/jekyll-lenciel-theme"
   spec.license       = "MIT"
 
-  spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(%r{^(assets|plugins|_layouts|_includes|_sass|LICENSE|README|index)}i) }
+  spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(%r{^(plugins|assets|_sass|LICENSE|README|index)}i) }
 
   spec.add_runtime_dependency "jekyll", "~> 4.2.0"
   spec.add_runtime_dependency "jekyll-sitemap"
