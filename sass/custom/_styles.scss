@@ -102,11 +102,18 @@ html {
   }
 
   .margin-toggle:checked + .sidenote:before {
-    content: "\1F4DC";
-    font-size: 1rem;
-    top: -0.1rem;
-    left: -0.4rem;
+    // content: "\1f4cc";
+    content: "\000a0";
+    color: #50545a;
+    font-size: 0.5rem;
+    top: -0.5rem;
+    left: -0.3rem;
   }
+
+  // .margin-toggle:checked + .sidenote {
+  //   border-style: dotted;
+  // }
+
 }
 
 * + table {

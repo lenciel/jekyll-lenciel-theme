@@ -2,7 +2,7 @@
 {% include head.html %}
 
 <body {% if page.body_id %} id="{{ page.body_id }}" {% endif %} {% if post.sidebar==false or page.sidebar==false %}
-  class="no-sidebar" {% endif %} {% if page.sidebar=='collapse' or site.sidebar=='collapse' %}
+  class="no-sidebar" {% endif %} {% if page.sidebar=='collapse' or site.sidebar=='collapse' or page.sidenote==false %}
   class="collapse-sidebar sidebar-footer" {% endif %}>
   <header role="banner">{% include header.html %}</header>
   <nav role="navigation">{% include navigation.html %}</nav>
