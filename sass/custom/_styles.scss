@@ -95,9 +95,12 @@ html {
   }
 
   label.margin-toggle.sidenote-number::after {
-    content: "\1f4a1";
+    content: "\329f";
     font-size: 1rem;
     top: -0.5rem;
+    font-family: sans-serif;
+    color: #d0648a;
+    text-shadow: none;
     left: 0.1rem;
   }
 
