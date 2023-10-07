@@ -2,7 +2,7 @@ require "rubygems"
 require "bundler/setup"
 require "stringex"
 require "colorize"
-require "html_compressor"
+require "htmlcompressor"
 require "parallel"
 require "ruby-progressbar"
 
@@ -35,8 +35,8 @@ server_port     = "4000"      # port for preview server eg. localhost:4000
 localhost_ip    = "0.0.0.0"  # just incase you're using vm like me
 
 n_cores = 4
-js_for_combine   = { 'app.js' => ['libs/modernizr.custom.55630.js', 'libs/jquery-3.4.1.slim.min.js', 'libs/lazyload.min.js'],
-                   }
+js_for_combine   = { 'app.js' => ['libs/modernizr.custom.55630.js', 'ender.js', 'libs/jquery.min.js'],
+                     '404.js' => ['libs/jquery.min.js'] }
 
 if (/cygwin|mswin|mingw|bccwin|wince|emx/ =~ RUBY_PLATFORM) != nil
   puts '## Set the codepage to 65001 for Windows machines'
@@ -59,7 +59,7 @@ task :copy_resized do
   puts "## Copying exsiting resized image to _site"
   system "jekyll clean"
   system "mkdir -p #{deploy_dir}"
-  FileUtils.mv Dir.glob("#{back_dir}/resized"), "#{deploy_dir}/"
+  FileUtils.cp_r Dir.glob("#{back_dir}/resized"), "#{deploy_dir}/"
 end
 
 desc "Generate jekyll site for production deployment"
@@ -70,29 +70,12 @@ task :generate do
   system "JEKYLL_ENV=production jekyll build --incremental"
 end
 
-desc "Watch the prod site and regenerate when it changes"
-task :watch do
-  Rake::Task[:backup_site].execute
-  Rake::Task[:copy_resized].execute
-
-  puts "Starting to watch source with Jekyll."
-
-  jekyllPid = Process.spawn({"JEKYLL_ENV"=>"production"}, "jekyll build --watch")
-
-  trap("INT") {
-    [jekyllPid].each { |pid| Process.kill(9, pid) rescue Errno::ESRCH }
-    exit 0
-  }
-
-  [jekyllPid].each { |pid| Process.wait(pid) }
-end
-
 desc "preview the dev site in a web browser"
 task :preview do
-  Rake::Task[:backup_site].execute
+  Rake::Task[:generate].execute
   puts "Starting to serve jekyll on http://#{localhost_ip}:#{server_port}"
 
-  jekyllPid = Process.spawn("jekyll serve --incremental --host #{localhost_ip} --port #{server_port}  -w --config _config.yml,_config_dev.yml")
+  jekyllPid = Process.spawn("jekyll serve --host #{localhost_ip} --port #{server_port} -l --config _config.yml,_config_dev.yml")
 
   trap("INT") {
     [jekyllPid].each { |pid| Process.kill(9, pid) rescue Errno::ESRCH }
@@ -105,7 +88,7 @@ end
 
 desc "preview the prod site in a web browser"
 task :preview_prod do
-  Rake::Task[:backup_site].execute
+  Rake::Task[:generate].execute
   puts "Starting to serve jekyll on http://#{localhost_ip}:#{server_port}"
 
   jekyllPid = Process.spawn({"JEKYLL_ENV"=>"production"}, "jekyll serve --watch")
@@ -136,6 +119,8 @@ task :new_post, :title do |t, args|
   open(filename, 'w') do |post|
     post.puts "---"
     post.puts "layout: post"
+    post.puts "comments: true"
+    post.puts "description: \"摘要\""
     post.puts "title: \"#{title.gsub(/&/,'&amp;')}\""
     post.puts "date: #{Time.now.strftime('%Y-%m-%d %H:%M:%S %z')}"
     post.puts "categories: "
@@ -172,6 +157,7 @@ task :new_page, :filename do |t, args|
     open(file, 'w') do |page|
       page.puts "---"
       page.puts "layout: page"
+      post.puts "comments: true"
       page.puts "title: \"#{title}\""
       page.puts "date: #{Time.now.strftime('%Y-%m-%d %H:%M')}"
       page.puts "sharing: true"
@@ -303,7 +289,7 @@ end
 
 desc "Combine and minify js"
 task :minify_js do
-  scripts_dir = "#{source_dir}/assets/javascripts"
+  scripts_dir = "#{deploy_dir}/assets/javascripts"
   js_for_combine.each do |k, v|
     if File.exist?("#{scripts_dir}/#{k}")
       newer = false
@@ -337,7 +323,7 @@ task :minify_html, :dir do |t, args|
                                    :starting_at => 0,
                                    :total => htmls.size,
                                    :format => '%t, %a |%b%i| %p%')
-  compressor = HtmlCompressor::HtmlCompressor.new
+  compressor = HtmlCompressor::Compressor.new
   Parallel.map(htmls, :in_threads => n_cores) do |f|
     input = File.read(f)
     output = File.open("#{f}", "w")
@@ -364,6 +350,6 @@ end
 
 desc "Remove Unused CSS"
 task :uncss do
-  puts "## Removing Unused CSS the dest file screen.min.css is not used for now"
-  system("css-purge -f css-purge-config.json")
+  puts "## Removing Unused CSS"
+  system("gulp uncss")
 end
