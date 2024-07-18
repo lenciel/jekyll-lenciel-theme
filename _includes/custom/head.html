@@ -1,46 +1,40 @@
-{% if page.title %}<meta property="og:title" content="{{ page.title }}" /><meta
-  itemprop="name"
-  content="{{ page.title }}"
-/>{% endif %}
+{% if page.title %}
+<meta property="og:title" content="{{ page.title }}" />
+<meta itemprop="name" content="{{ page.title }}" />
+{% endif %}
 <meta property="og:type" content="article" />
 <meta property="og:url" content="{{ canonical }}" />
-<meta
-  property="og:description"
-  content="{{ description | strip_html | condense_spaces | truncate:150 }}"
-/>
-{% if page.ogimage %}<meta
-  property="og:image"
-  content="{{ page.ogimage }}"
-/><meta itemprop="image" content="{{ page.ogimage }}" />{% endif %}
+<meta property="og:description" content="{{ description | strip_html | condense_spaces | truncate:150 }}" />
+{% if page.ogimage %}
+<meta property="og:image" content="{{ page.ogimage }}" />
+<meta itemprop="image" content="{{ page.ogimage }}" />
+{% endif %}
 <meta property="og:site_name" content="{{ site.url }}" />
 <meta property="article:author" content="http://lenciel.com" />
-{% if page.date %}<meta
-  property="article:published_time"
-  content="{{ page.date }}"
-/>{% endif %} {% capture category %}{% if page.categories %}{{ page.categories
-}}{% endif %}{% endcapture %} {% if page.categories %}<meta
-  property="article:section"
-  content="{{ page.categories }}"
-/>{% endif %} {% if page.keywords %}<meta
-  name="keywords"
-  content="{{ page.keywords }}"
-/>{% for keyword in page.keywords %}<meta
-  property="article:tag"
-  content="{{ keyword | replace: ',', '' }}"
-/>{% endfor %}{% endif %} {% if page.mathjax %}
-<script
-  type="text/javascript"
-  src="https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
-></script>
+{% if page.date %}
+<meta property="article:published_time" content="{{ page.date }}" />
 {% endif %}
-
+{% capture category %}
+{% if page.categories %}{{ page.categories}}{% endif %}
+{% endcapture %}
+{% if page.categories %}
+<meta property="article:section" content="{{ page.categories }}" />
+{% endif %}
+{% if page.keywords %}
+<meta name="keywords" content="{{ page.keywords }}" />
+{% for keyword in page.keywords %}
+<meta property="article:tag" content="{{ keyword | replace: ',', '' }}" />
+{% endfor %}
+{% endif %}
+{% if page.mathjax %}
+<script type="text/javascript"
+  src="https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+{% endif %}
+{% if jekyll.environment == "production" %}
 <script src="{{ site.static_base }}/assets/javascripts/Valine.min.js"></script>
-<script
-  async
-  defer
-  data-website-id="57808f92-2188-4e05-bcc7-a27aa3262adf"
-  src="https://umami.lenciel.com/umami.js"
-></script>
+<script async defer data-website-id="57808f92-2188-4e05-bcc7-a27aa3262adf"
+  src="https://umami.lenciel.com/umami.js"></script>
+{% endif %}
 <!-- Prefetch DNS for external assets -->
 <link href="https://cdn.lenciel.com" rel="preconnect" crossorigin />
 <link rel="dns-prefetch" href="//stats.g.doubleclick.net" />

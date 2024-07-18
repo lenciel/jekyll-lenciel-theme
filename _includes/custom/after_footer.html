@@ -49,6 +49,7 @@
     if (sections.length >= 3) { $('aside.sidebar').addClass('thirds'); }
   });
 </script>
+{% if jekyll.environment == "production" %}
 <script>
   new Valine({
     placeholder: '说点儿什么...',
@@ -58,3 +59,4 @@
     appKey: '{{ site.comment_appKey }}'
   })
 </script>
+{% endif %}
