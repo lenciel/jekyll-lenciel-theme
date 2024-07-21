@@ -26,9 +26,8 @@
 <meta property="article:tag" content="{{ keyword | replace: ',', '' }}" />
 {% endfor %}
 {% endif %}
-{% if page.mathjax %}
-<script type="text/javascript"
-  src="https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+{% if page.mathjax or page.url == "/" %}
+<script id="MathJax-script" async src="https://cdn.bootcss.com/mathjax/3.2.2/es5/tex-mml-chtml.js"></script>
 {% endif %}
 {% if jekyll.environment == "production" %}
 <script src="{{ site.static_base }}/assets/javascripts/Valine.min.js"></script>
