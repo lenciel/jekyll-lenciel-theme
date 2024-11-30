@@ -89,6 +89,7 @@ description: > # this means to ignore newlines until "baseurl:"
 baseurl: ""
 url: "https://localhost.prod"
 static_base: "https://cdn.lenciel.com"
-simple_search: true
+simple_search: false
+pagefind_search: true
 feed:
   excerpt_only: true
