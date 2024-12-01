@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "jekyll-lenciel-theme"
-  spec.version       = "1.0.28"
+  spec.version       = "1.0.29"
   spec.authors       = ["lenciel"]
   spec.email         = ["lenciel@gmail.com"]
 
