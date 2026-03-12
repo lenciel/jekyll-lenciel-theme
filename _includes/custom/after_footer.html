@@ -49,15 +49,27 @@
     if (sections.length >= 3) { $('aside.sidebar').addClass('thirds'); }
   });
 </script>
-{% if jekyll.environment == "production" %}
-<script>
-  new Valine({
-    placeholder: '说点儿什么...',
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css" />
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline-meta.css" />
+
+<script type="module">
+  import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+  const locale = {
+    placeholder: '欢迎留言，上面这些不填，你就是匿名的～',
+  };
+  init({
     el: '#vcomments',
-    avatar_cdn: 'https://cravatar.cn/avatar/',
-    visitor: true,
-    appId: '{{ site.comment_appId }}',
-    appKey: '{{ site.comment_appKey }}'
-  })
+    serverURL: 'https://comments.lenciel.com',
+    path: '{{ page.url }}',
+    avatar: 'mp',
+    meta: ['nick', 'mail', 'link'],
+    requiredMeta: [],
+    noRss: true,
+    noCopyright: true,
+    imageUploader: false,
+    search: false,
+    lang: 'zh-CN',
+    highlight: true,
+    locale,
+  });
 </script>
-{% endif %}
