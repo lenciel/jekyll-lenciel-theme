@@ -41,7 +41,7 @@ titlecase: true # Converts page and post titles to titlecase
 picture:
   output: "resized"
   fast_build: true
-  cdn_url: "http://cdn.lenciel.com"
+  cdn_url: "http://oss.lenciel.com"
   cdn_environments: ["production"]
   suppress_warnings: true
   noscript: true # add a fallback image inside a <noscript> tag.
@@ -88,7 +88,7 @@ description: > # this means to ignore newlines until "baseurl:"
   Google search results) and in your feed.xml site description.
 baseurl: ""
 url: "https://localhost.prod"
-static_base: "https://cdn.lenciel.com"
+static_base: "https://oss.lenciel.com"
 simple_search: false
 pagefind_search: true
 feed:
