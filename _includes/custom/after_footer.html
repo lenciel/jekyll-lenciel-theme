@@ -73,3 +73,56 @@
     locale,
   });
 </script>
+
+{% if content contains 'class="mermaid"' %}
+<style>
+  pre.mermaid {
+    /* 与站点现有配色对齐：粉色强调、纸面灰底、Solarized 系列色 */
+    --pele-bg: #f8f8f8;
+    --pele-fg: #222222;
+    --pele-muted: #888888;
+    --pele-line: #7a7a7a;
+    --pele-surface: #ffffff;
+    --pele-surface-alt: #f2f2f2;
+    --pele-border: #d8c9d1;
+    --pele-accent: #d0648a;
+    --pele-error: #dc322f;
+    --pele-radius: 6px;
+    --pele-series-1: #268bd2;
+    --pele-series-2: #cb4b16;
+    --pele-series-3: #859900;
+    --pele-series-4: #dc322f;
+    --pele-series-5: #2aa198;
+    --pele-series-6: #b58900;
+    --pele-series-7: #6c71c4;
+    --pele-series-8: #d33682;
+    --pele-font: -apple-system, "Noto Sans", "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
+    --pele-font-mono: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace;
+    background: none;
+    border: 0;
+    box-shadow: none;
+    color: inherit;
+    font-family: inherit;
+    font-size: 1em;
+    line-height: normal;
+    margin-bottom: 1.8em;
+    overflow-x: auto;
+    padding: 0;
+    text-align: center;
+  }
+
+  pre.mermaid svg {
+    height: auto;
+    max-width: 100%;
+  }
+</style>
+<script src="https://unpkg.com/pele@1.6.0/dist/pele.global.js" defer></script>
+<script>
+  window.addEventListener('DOMContentLoaded', function () {
+    if (!window.pele) return;
+    document.querySelectorAll('pre.mermaid').forEach(function (el) {
+      pele.mount(el, el.textContent);
+    });
+  });
+</script>
+{% endif %}
